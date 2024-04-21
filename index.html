@@ -62,6 +62,21 @@
     <!-- Include GameUI.js from CDN -->
     <script src="https://cdn.jsdelivr.net/npm/gameui.js"></script>
 
+    <script>
+        // Get the modal close buttons
+        var closeButtons = document.querySelectorAll(".close");
+
+        // Loop through all close buttons
+        closeButtons.forEach(function(button) {
+            // Add click event listener to each close button
+            button.addEventListener("click", function() {
+                // Find the parent modal and hide it when the close button is clicked
+                var modal = button.parentElement.parentElement;
+                modal.style.display = "none";
+            });
+        });
+    </script>
+
     <script src="script.js"></script>
 </body>
 </html>
