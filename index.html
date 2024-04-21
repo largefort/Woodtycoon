@@ -9,10 +9,28 @@
 <body>
     <div id="wood-count">Wood: 0</div>
     <div id="factory-level">Factory Level: 1</div>
-    <button id="build-factory-btn">Build Factory</button>
+    <button id="build-factory-btn">Build Factory (Cost: 10)</button>
     <div id="upgrade-container">
         <h2>Upgrades</h2>
         <button id="upgrade-speed-btn">Upgrade Factory Speed (Cost: 50 wood)</button>
+    </div>
+    <div id="tutorial-overlay">
+        <div id="tutorial-content">
+            <h2>Welcome to Lumber Factory Tycoon!</h2>
+            <p>Hi there! I'm Jafet Egill, your guide to this game. Let's get started!</p>
+            <p>Click the "Build Factory" button to start producing wood. As you build more factories, your production will increase.</p>
+            <p>Remember, wood is the key resource in this game. Keep an eye on your wood count!</p>
+            <button id="close-tutorial-btn">Close</button>
+        </div>
+    </div>
+    <button id="jafets-tips-btn">Jafet's Tips</button>
+    <div id="jafets-tips-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Jafet's Tips</h2>
+            <p id="tip-text">Click the button below to reveal a randomly generated tip!</p>
+            <button id="generate-tip-btn">Generate Tip</button>
+        </div>
     </div>
     
     <script src="script.js"></script>
