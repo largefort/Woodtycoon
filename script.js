@@ -100,7 +100,11 @@ function loadGameState() {
 
 // Function to show tutorial overlay
 function showTutorial() {
-    tutorialOverlay.style.display = "flex";
+    // Check if the game is being played for the first time
+    const isFirstTime = !localStorage.getItem("gameState");
+    if (isFirstTime) {
+        tutorialOverlay.style.display = "flex";
+    }
 }
 
 // Function to close tutorial overlay
@@ -134,11 +138,10 @@ function generateRandomTip() {
 // Event listeners
 buildFactoryButton.addEventListener("click", buildFactory);
 upgradeSpeedButton.addEventListener("click", upgradeSpeed);
-buildFactoryButton.addEventListener("click", showTutorial);
-closeTutorialButton.addEventListener("click", closeTutorial);
 jafetsTipsButton.addEventListener("click", showJafetsTipsModal);
 generateTipButton.addEventListener("click", generateRandomTip);
 jafetsTipsModal.getElementsByClassName("close")[0].addEventListener("click", closeJafetsTipsModal);
+closeTutorialButton.addEventListener("click", closeTutorial);
 
 // Call loadGameState() when the page is loaded
 window.addEventListener("load", loadGameState);
