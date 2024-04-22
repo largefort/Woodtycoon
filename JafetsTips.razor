@@ -1,0 +1,29 @@
+@code {
+    string tipText = "Click the button below to reveal a randomly generated tip!";
+    bool showModal = false;
+
+    void GenerateRandomTip()
+    {
+        // Your logic to generate a random tip
+        tipText = "Your randomly generated tip goes here!";
+    }
+
+    void ToggleModal()
+    {
+        showModal = !showModal;
+    }
+}
+
+@if (showModal)
+{
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close" @onclick="ToggleModal">&times;</span>
+            <h2>Jafet's Tips</h2>
+            <p>@tipText</p>
+            <button @onclick="GenerateRandomTip">Generate Tip</button>
+        </div>
+    </div>
+}
+
+<button @onclick="ToggleModal">Jafet's Tips</button>
