@@ -7,8 +7,6 @@ const woodCountElement = document.getElementById("wood-count");
 const factoryLevelElement = document.getElementById("factory-level");
 const buildFactoryButton = document.getElementById("build-factory-btn");
 const upgradeSpeedButton = document.getElementById("upgrade-speed-btn");
-const tutorialOverlay = document.getElementById("tutorial-overlay");
-const closeTutorialButton = document.getElementById("close-tutorial-btn");
 const jafetsTipsButton = document.getElementById("jafets-tips-btn");
 const jafetsTipsModal = document.getElementById("jafets-tips-modal");
 const generateTipButton = document.getElementById("generate-tip-btn");
@@ -98,20 +96,6 @@ function loadGameState() {
     }
 }
 
-// Function to show tutorial overlay
-function showTutorial() {
-    // Check if the game is being played for the first time
-    const isFirstTime = !localStorage.getItem("gameState");
-    if (isFirstTime) {
-        tutorialOverlay.style.display = "flex";
-    }
-}
-
-// Function to close tutorial overlay
-function closeTutorial() {
-    tutorialOverlay.style.display = "none";
-}
-
 // Function to show Jafet's tips modal
 function showJafetsTipsModal() {
     jafetsTipsModal.style.display = "block";
@@ -141,7 +125,6 @@ upgradeSpeedButton.addEventListener("click", upgradeSpeed);
 jafetsTipsButton.addEventListener("click", showJafetsTipsModal);
 generateTipButton.addEventListener("click", generateRandomTip);
 jafetsTipsModal.getElementsByClassName("close")[0].addEventListener("click", closeJafetsTipsModal);
-closeTutorialButton.addEventListener("click", closeTutorial);
 
 // Call loadGameState() when the page is loaded
 window.addEventListener("load", loadGameState);
@@ -153,6 +136,3 @@ updateFactoryCost();
 
 // Initial production rate setup
 let productionInterval = setInterval(produceWood, factoryProductionRate);
-
-// Show tutorial on page load
-showTutorial();
