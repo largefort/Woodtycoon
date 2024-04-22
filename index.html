@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lumber Factory Tycoon</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="_framework/blazor.webassembly.js"></script>
 </head>
 <body>
     <div id="wood-count">Wood: 0</div>
@@ -15,68 +16,14 @@
         <button id="upgrade-speed-btn">Upgrade Factory Speed (Cost: 50 wood)</button>
     </div>
     <button id="jafets-tips-btn">Jafet's Tips</button>
-    <button id="show-tutorial-btn">Show Tutorial</button>
 
-    <!-- Tutorial Overlay Modal -->
-    <div id="tutorial-overlay" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="tutorial-content">
-                <h2>Welcome to Lumber Factory Tycoon!</h2>
-                <p>Hi there! I'm Jafet Egill, your guide to this game. Let's get started!</p>
-                <p>Click the "Build Factory" button to start producing wood. As you build more factories, your production will increase.</p>
-                <p>Remember, wood is the key resource in this game. Keep an eye on your wood count!</p>
-                <button id="next-page-btn">Next Page</button>
-            </div>
-            <div id="tutorial-content-2" style="display: none;">
-                <h2>Building Factories</h2>
-                <p>Building factories will increase your wood production. The more factories you have, the faster you'll earn wood!</p>
-                <button id="prev-page-btn">Previous Page</button>
-                <button id="next-page-btn-2">Next Page</button>
-            </div>
-            <div id="tutorial-content-3" style="display: none;">
-                <h2>Upgrading Speed</h2>
-                <p>Upgrade your factory speed to produce wood even faster. Spend wood to unlock upgrades!</p>
-                <button id="prev-page-btn-2">Previous Page</button>
-                <button id="next-page-btn-3">Next Page</button>
-            </div>
-            <div id="tutorial-content-4" style="display: none;">
-                <h2>Enjoy the Game!</h2>
-                <p>That's it! You're ready to become a lumber tycoon. Have fun playing!</p>
-                <button id="close-tutorial-btn">Close</button>
-                <button id="prev-page-btn-3">Previous Page</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Jafet's Tips Modal -->
-    <div id="jafets-tips-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Jafet's Tips</h2>
-            <p id="tip-text">Click the button below to reveal a randomly generated tip!</p>
-            <button id="generate-tip-btn">Generate Tip</button>
-        </div>
+    <!-- Include the Blazor component -->
+    <div id="blazor-component">
+        <JafetsTips />
     </div>
 
     <!-- Include GameUI.js from CDN -->
     <script src="https://cdn.jsdelivr.net/npm/gameui.js"></script>
-
-    <script>
-        // Get the modal close buttons
-        var closeButtons = document.querySelectorAll(".close");
-
-        // Loop through all close buttons
-        closeButtons.forEach(function(button) {
-            // Add click event listener to each close button
-            button.addEventListener("click", function() {
-                // Find the parent modal and hide it when the close button is clicked
-                var modal = button.parentElement.parentElement;
-                modal.style.display = "none";
-            });
-        });
-    </script>
-
     <script src="script.js"></script>
 </body>
 </html>
